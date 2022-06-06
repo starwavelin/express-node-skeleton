@@ -2,6 +2,7 @@ import cors from 'cors';
 import * as dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
+import { helloRouter } from './controllers/hello.router';
 
 
 /** Set the running port */
@@ -23,7 +24,7 @@ app.use(cors());
 
 
 /** Inject routers */
-
+app.use('/api', helloRouter);
 
 /** Server activation */
 app.listen(port, () => {
